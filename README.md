@@ -10,7 +10,7 @@
 
 **evalcheck** is a tiny eval harness for LLM prompts. Describe expectations in a JSONL file, run them against any OpenAI-compatible API, and get a clear pass/fail report. Perfect for catching prompt regressions in CI.
 
-## Test case format
+## 🧪 Test case format
 
 One JSON object per line (`cases.jsonl`):
 
@@ -29,7 +29,7 @@ One JSON object per line (`cases.jsonl`):
 | `max_words` | output must be at most this long |
 | `mock` | fake output, used with `--mock` |
 
-## Run
+## 📌 Run
 
 ```bash
 export OPENAI_API_KEY=sk-...
@@ -49,7 +49,7 @@ Try it offline, no key needed:
 python evalcheck.py cases.jsonl --mock
 ```
 
-## Output
+## 📌 Output
 
 ```
 ✓ capital  (412 ms)
@@ -61,11 +61,11 @@ python evalcheck.py cases.jsonl --mock
 
 Exit code is `0` if everything passes, `1` otherwise, so it drops straight into CI.
 
-## Notes
+## 📌 Notes
 
 - Temperature is fixed at 0 for repeatable results.
 - Cases run one by one; no parallelism, no retries. Keep it simple.
 
-## License
+## 📄 License
 
 MIT
